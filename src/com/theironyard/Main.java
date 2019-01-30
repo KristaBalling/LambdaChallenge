@@ -1,6 +1,7 @@
 package com.theironyard;
 
 import java.util.function.Function;
+import java.util.function.Supplier;
 
 public class Main {
 
@@ -56,7 +57,7 @@ public class Main {
 
         //challenge 3 - write the code that will execute the function
         // with an arguement of "1234567890"
-        System.out.println(lambdaFunction.apply("1234567890"));
+//        System.out.println(lambdaFunction.apply("1234567890"));
         //returns only even numbers and zero
 
         //challenge 5 - call the method with the lambdaFunction we created
@@ -65,8 +66,17 @@ public class Main {
         System.out.println(result);
 
         //challenge 4 - write a method called everySecondCharacter that
-        // accepts the function as a parameter and executes it with the arguement
+        // accepts the function as a parameter and executes it with the argument
         //"1234567890"
+
+        //challenge 6 - write a lambda expression that maps to the java.util.Supplier interface
+        //this lambda should return the string "I love Java!"
+        //assign it to a variable called iLoveJava
+        Supplier<String> iLoveJava = () -> "I love Java!";
+        //a supplier produces strings, no return keyword needed
+
+
+
         }
         public static String everySecondCharacter(Function<String, String> func, String source) {
             return func.apply(source);
