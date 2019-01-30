@@ -100,12 +100,20 @@ public class Main {
         );
 
         List<String> firstUpperCaseList = new ArrayList<>();
-        topNames2015.forEach(name ->
-                firstUpperCaseList.add(name.substring(0,1).toUpperCase() + name.substring(1)));
-//        firstUpperCaseList.sort((s1, s2) -> s1.compareTo(s2));
+//        topNames2015.forEach(name ->
+//                firstUpperCaseList.add(name.substring(0,1).toUpperCase() + name.substring(1)));
+////        firstUpperCaseList.sort((s1, s2) -> s1.compareTo(s2));
 //        firstUpperCaseList.forEach(s -> System.out.println(s));
-        firstUpperCaseList.sort(String::compareTo);
-        firstUpperCaseList.forEach(System.out::println);
+//        firstUpperCaseList.sort(String::compareTo);
+//        firstUpperCaseList.forEach(System.out::println);
+
+
+       //challenge 11 - using streams
+        topNames2015
+                .stream()
+                .map(name -> name.substring(0,1).toUpperCase() + name.substring(1))
+                .sorted(String::compareTo)
+                .forEach(System.out::println);
 
         //challenge 10 - change the code so that it uses method references.
         //Remember that a method reference looks like Class::MethodName
