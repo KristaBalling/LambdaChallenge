@@ -109,15 +109,24 @@ public class Main {
 
 
        //challenge 11 - using streams
-        topNames2015
-                .stream()
-                .map(name -> name.substring(0,1).toUpperCase() + name.substring(1))
-                .sorted(String::compareTo)
-                .forEach(System.out::println);
+//        topNames2015
+//                .stream()
+//                .map(name -> name.substring(0,1).toUpperCase() + name.substring(1))
+//                .sorted(String::compareTo)
+//                .forEach(System.out::println);
 
         //challenge 10 - change the code so that it uses method references.
         //Remember that a method reference looks like Class::MethodName
 
+        //challenge 12 - Instead of printing out the sorted names, print out how
+        // many names begin with the letter "A"
+        long namesBeginningWithA = topNames2015
+                .stream()
+                .map(name -> name.substring(0,1).toUpperCase() + name.substring(1))
+                .filter(name -> name.startsWith("A"))
+                .count();
+
+        System.out.println("Number of names beginning with A is: " + namesBeginningWithA);
 
 
 
