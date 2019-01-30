@@ -75,6 +75,11 @@ public class Main {
         Supplier<String> iLoveJava = () -> "I love Java!";
         //a supplier produces strings, no return keyword needed
 
+        //challenge 7 - use this supplier to assign the string "I love Java!"
+        //to a variable called supplierResult, then print to the console
+        String supplierResult = iLoveJava.get();
+        System.out.println(supplierResult);
+
 
 
         }
